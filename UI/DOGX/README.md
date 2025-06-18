@@ -1,16 +1,44 @@
-# programmer
+## 🧠 Overview of `lib/` (Flutter Programmer App)
 
-A new Flutter project.
+This module implements the core logic of a Flutter-based serial programmer interface for managing **microcontroller register data** via a UI and serial communication.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+### 🔧 Key Concepts & Architecture
 
-A few resources to get you started if this is your first Flutter project:
+- **Registers & Chips:**
+  - `Register`: Represents a configurable field with metadata like name, bit-width, signed/unsigned, and value.
+  - `Chip`: A named collection of registers, treated as a programmable unit.
+  - `RegisterList`: Static manager class that stores all chips and provides methods to encode register values for transmission.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Serialization & Storage:**
+  - `json_file_handler.dart`: Handles reading/writing chip-register structures to a JSON file for persistence.
+  - Chips and registers can be saved and restored between sessions.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **UI Components:**
+  - `ui_page.dart`: The main interactive page that loads chip data, shows registers, and interacts with the serial port.
+  - `register_view.dart`: Widget for editing a single register's value, with constraints like bit width and signedness.
+
+- **State Management:**
+  - Uses `Provider` (`reg_provider.dart`) for UI state updates — primarily to reflect register changes.
+  - `RegProvider` is a singleton with a simple `notifyListeners()` call.
+
+- **Serial Communication:**
+  - `serial_wr.dart`: Uses `flutter_libserialport` to send and receive byte-encoded register data over a serial interface.
+  - Exposes `begin()` to open a port and `listen()` to react to incoming data.
+
+---
+
+### 📁 File Summary
+
+| File | Description |
+|------|-------------|
+| `main.dart` | Initializes chips from JSON and launches the UI with Provider. |
+| `chip.dart` | Model for a Chip containing a list of Registers. |
+| `register.dart` | Data model for a Register, with helper methods for bit conversion. |
+| `register_list.dart` | Static logic for register encoding and chip register access. |
+| `register_view.dart` | UI component to view/edit a single register. |
+| `ui_page.dart` | Main UI page with chip management and serial interaction. |
+| `reg_provider.dart` | Simple provider for triggering UI refreshes. |
+| `serial_wr.dart` | Serial port wrapper using `flutter_libserialport`. |
+| `json_file_handler.dart` | JSON serialization/deserialization of chip data. |
