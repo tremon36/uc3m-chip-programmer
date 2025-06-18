@@ -1,0 +1,217 @@
+[
+  {
+    "nameId": "DOG15",
+    "selected": true,
+    "registers": [
+      {
+        "name": "GTHDR",
+        "nbits": 5,
+        "signed": false,
+        "help": "Analog gain trimming for HDR channel 7.00k - 14.50k",
+        "value": 7
+      },
+      {
+        "name": "GTHSNR",
+        "nbits": 5,
+        "signed": false,
+        "help": "Analog gain trimming for HDR channel 1.00k - 2.50k",
+        "value": 13
+      },
+      {
+        "name": "FCHSNR",
+        "nbits": 4,
+        "signed": false,
+        "help": "Analog frequency tunning of HSNR channel through current mirror adjust, 0 - 15 uA increase",
+        "value": 6
+      },
+      {
+        "name": "HSNR_EN",
+        "nbits": 1,
+        "signed": false,
+        "help": "Enable HSNR channel",
+        "value": 1
+      },
+      {
+        "name": "HDR_EN",
+        "nbits": 1,
+        "signed": false,
+        "help": "Enable HDR channel",
+        "value": 1
+      },
+      {
+        "name": "BG_PROG_EN",
+        "nbits": 1,
+        "signed": false,
+        "help": "Enable Bandgap programming",
+        "value": 1
+      },
+      {
+        "name": "BG_PROG",
+        "nbits": 4,
+        "signed": true,
+        "help": "0000 -> Nominal, else (-18% to +18%)",
+        "value": 5
+      },
+      {
+        "name": "LDOA_OFF",
+        "nbits": 1,
+        "signed": false,
+        "help": "Analog LDO OFF",
+        "value": 0
+      },
+      {
+        "name": "LDOD_OFF",
+        "nbits": 1,
+        "signed": false,
+        "help": "Digital LDO OFF",
+        "value": 0
+      },
+      {
+        "name": "LDOA_BP",
+        "nbits": 1,
+        "signed": false,
+        "help": "Analog LDO Bypass",
+        "value": 0
+      },
+      {
+        "name": "LDOD_BP",
+        "nbits": 1,
+        "signed": false,
+        "help": "Digital LDO Bypass",
+        "value": 0
+      },
+      {
+        "name": "LDOD_MODE_1V",
+        "nbits": 1,
+        "signed": false,
+        "help": "Digital LDO 0.9V -> 1.0V",
+        "value": 0
+      },
+      {
+        "name": "LDOA_tweak",
+        "nbits": 1,
+        "signed": false,
+        "help": "Increase current LDOA",
+        "value": 1
+      },
+      {
+        "name": "HPFEN",
+        "nbits": 1,
+        "signed": false,
+        "help": "Highpass filter enable",
+        "value": 0
+      },
+      {
+        "name": "OGPH",
+        "nbits": 24,
+        "signed": true,
+        "help": "Offset/Gain Calibration word P HSNR",
+        "value": 2097152
+      },
+      {
+        "name": "OGPN",
+        "nbits": 24,
+        "signed": true,
+        "help": "Offset/Gain Calibration word N HSNR",
+        "value": -2097152
+      },
+      {
+        "name": "ATHHI",
+        "nbits": 9,
+        "signed": false,
+        "help": "alpha threshold value high",
+        "value": 12
+      },
+      {
+        "name": "ATHLO",
+        "nbits": 9,
+        "signed": false,
+        "help": "alpha threshold value low",
+        "value": 10
+      },
+      {
+        "name": "ATO",
+        "nbits": 5,
+        "signed": false,
+        "help": "alpha timeout (24 - 390 Hz)",
+        "value": 6
+      },
+      {
+        "name": "REF_OUT",
+        "nbits": 1,
+        "signed": false,
+        "help": "Oscillator reference phases out (freq/4)",
+        "value": 1
+      },
+      {
+        "name": "DLLFILT",
+        "nbits": 1,
+        "signed": false,
+        "help": "Use DLL filter",
+        "value": 1
+      },
+      {
+        "name": "DLL_EN",
+        "nbits": 1,
+        "signed": false,
+        "help": "Enable DLL clock ( When 1 use 3MHz clock, when 0 use 24 MHz)",
+        "value": 1
+      },
+      {
+        "name": "DLL_FBK",
+        "nbits": 1,
+        "signed": false,
+        "help": "Enable DLL feedback (1 for open loop)",
+        "value": 0
+      },
+      {
+        "name": "DLL_FT",
+        "nbits": 1,
+        "signed": false,
+        "help": "DLL dac fine tuning bit",
+        "value": 0
+      },
+      {
+        "name": "DLL_DAC",
+        "nbits": 5,
+        "signed": false,
+        "help": "DLL DAC programming when feedback is disabled",
+        "value": 18
+      },
+      {
+        "name": "CLKOUTSEL",
+        "nbits": 1,
+        "signed": false,
+        "help": "Select output clock for clock pin (0 -> 3MHZ generated clock, 1 -> 24 MHz DLL clock)",
+        "value": 1
+      },
+      {
+        "name": "OP_MODE",
+        "nbits": 1,
+        "signed": false,
+        "help": "Operation mode (0 is DDR mode, 1 is one bit mode)",
+        "value": 0
+      }
+    ]
+  },
+  {
+    "nameId": "DOGX",
+    "selected": false,
+    "registers": [
+      {
+        "name": "OP_MODE",
+        "nbits": 1,
+        "signed": false,
+        "help": "Operation mode (0 is DDR mode, 1 is one bit mode)",
+        "value": 0
+      },
+      {
+        "name": "CLKOUTSEL",
+        "nbits": 1,
+        "signed": false,
+        "help": "Select output clock for clock pin (0 -> 3MHZ generated clock, 1 -> 24 MHz DLL clock)",
+        "value": 1
+      }
+    ]
+  }
+]
